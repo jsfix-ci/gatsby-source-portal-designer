@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 8
+cache:
+  directories:
+    - "~/.npm"
+before_script:
+  - npm i -g gatsby
+script:
+  - npm run lint
+  - npm run test
+after_success:
+  - npm run semantic-release
+  - npm run coveralls
+env:
+  global:
+    - secure: E6yIQ+c0iLgI0m3QgkaUbZXNeLDsbMIIhkhmD3VapCxp8k2bLe2/LWJzep6prKLQncp6O8jF84QnKca+0wzyda+fRvkd0+TEP+OWHuV3KfNzuQeTHScjWisH5ruC9EWTARfJTXJMf+H1dAnqKov4NYGD30rP72o4+sFFp6yndClgDwEPEmFplIoE+gKuy83i9DZdB2Dw3fUkZu3/AIgs0RTFShmkef2Xm8Pc9sZh3xuY01AgdJ7D36eofNom6xb2/hgXKKbWnAvEKoLS0/b+wbejRVivu+cMlPhKtZx073VzdB/Uu6la/5RTtODOxBmLcsptKk9N52Lmm9xxWSBG1CfhdNql74CGX3B3ndxyMoe60WT0rlBisPna8ZSHPekJZkRxj9BN3H9sWBvSJhuG50CWvI3TEWrHXOZICR/IKCWbo+jml5fW9b+Yr1LTF1Uw9Ujxt0hNljBYFYL2G8OfSDvvAE1l8D8Xk9EssBYH/qCV6lDm1h1+jNGJix3S0NoOVYL1QLW7pH+nqzNBBq2B12zpNsZtHomY4R7BJMJvKY7ZcRZoGFyToOdY7IyQtB2fneTTls5LUj8Kdhe2aZ/8N0Tuk0AWXs/WUjY2S6awbdr/Rxu91sUM+dJKBBaGZUf2gas7fZYp+ydtdb1ovE0kySmb38w0Cfi0PdcgZDckfOk=
+    - secure: phrFzzQoX3GAgHnQ6S4c7mNgWXT95/9s7ed84kf6xmVcmL9flFUjPdEUqdEK7pLEOoiZGdF7wZPok4lNJEXAiINXw2LOZYrnlBZjhGO/VUeyB4XdHf/q+aY8FJFdBh7v6i8MnOTgikrfvJmvRKSZTWNt2D5HDHfMlXy19gBbN0rj+BC0htrZkkmJPvr8rXNIuWfZluFLzMrwKBCnrmsxE9RfMEALLeRLA7Tg0Uf0XavG/dyZWD8nJexkUYtN7/YGkx4Ux6efEd3Kz2aEn0/O1oki+PX9FSWchQNrMMidDcUYDs6TxKm1MqA53bWum0UYgxPCOGiKOtGMqN6p3k+WfuQDFQKlwtR/7EsXRPb/aeKtyaodaP9bqYuArCCoN2xzYWNh6q5LEE9gfhvsCfsImOXXVa2SFTOp0jwE4R+AQY/DFaRF64/MjkQIihv415BrZlIfdZrOYRy4nIrAJA1NYrAJQjEhEcNa0AFaJOCJnz9aiMU9gpFWzBgsl4gMCwY+EUrEDIn6IberU26iNNCZQ1T9YpJFBnmHIKPS0yrni8Rhy2/GWM5p6pJocbKSRLhDKUgLYwPhlDJPC4VwShJUESesCy3vjrFZHkSxRurL5l73TqIAkn1zYRHApkAH5XzC3gIq7hTtxGJAVDxmN5cICzJ6/u55obC3orHU7iL2SoM=
