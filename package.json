@@ -1,0 +1,36 @@
+{
+  "name": "@edx/gatsby-source-portal-designer",
+  "version": "1.0.0-semantically-released",
+  "description": "",
+  "main": "gatsby-node.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint --ext .js .",
+    "precommit": "npm run lint",
+    "semantic-release": "semantic-release",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL",
+  "dependencies": {
+    "node-fetch": "^2.4.0",
+    "query-string": "^6.4.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^6.0.2",
+    "@commitlint/prompt": "^6.0.2",
+    "@commitlint/prompt-cli": "^6.0.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^5.2.0",
+    "eslint-config-edx": "^4.0.4",
+    "husky": "^0.14.3",
+    "jest": "^24.8.0",
+    "semantic-release": "^15.1.7"
+  }
+}
