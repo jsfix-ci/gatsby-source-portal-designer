@@ -1,5 +1,10 @@
 const { createPagesWithData } = require('../createPagesWithData');
-const { templates } = require('../templates');
+
+const templates = {
+  programListPage: 'program list component',
+  programPage: 'program page component',
+  enterpriseDashboardPage: 'enterprise dashboard page component',
+};
 
 describe('createPagesWithData', () => {
   it('should only create page based on the type in first node in nodes', () => {
@@ -37,7 +42,7 @@ describe('createPagesWithData', () => {
     };
     const actions = { createPage: jest.fn() };
 
-    createPagesWithData(graphqlQueryResult, actions);
+    createPagesWithData(graphqlQueryResult, actions, templates);
 
     const expectedArgs = {
       path: '/',
@@ -89,7 +94,7 @@ describe('createPagesWithData', () => {
     };
     const actions = { createPage: jest.fn() };
 
-    createPagesWithData(graphqlQueryResult, actions);
+    createPagesWithData(graphqlQueryResult, actions, templates);
 
     const programPageData = {
       pageType: 'pages.ProgramPage',
@@ -152,7 +157,7 @@ describe('createPagesWithData', () => {
     };
     const actions = { createPage: jest.fn() };
 
-    createPagesWithData(graphqlQueryResult, actions);
+    createPagesWithData(graphqlQueryResult, actions, templates);
 
     const expectedContext = {
       programs: [
@@ -223,7 +228,7 @@ describe('createPagesWithData', () => {
     const actions = { createPage: jest.fn() };
     process.env.UNBRANDED_LANDING_PAGE = 'True';
 
-    createPagesWithData(graphqlQueryResult, actions);
+    createPagesWithData(graphqlQueryResult, actions, templates);
 
     const expectedContext = {
       programs: [
