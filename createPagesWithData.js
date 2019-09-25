@@ -1,5 +1,3 @@
-const { templates } = require('./templates');
-
 const validPageTypes = ['pages.ProgramPage', 'pages.EnterprisePage'];
 
 const transformCommonPageContext = ({ type, branding }) => (
@@ -32,7 +30,7 @@ const transformEnterprisePageContext = context => (
   }
 );
 
-function createPagesWithData(result, actions) {
+function createPagesWithData(result, actions, templates) {
   const { createPage } = actions;
   const onlyCreateListingPage = process.env.UNBRANDED_LANDING_PAGE === 'True';
   const allPagesData = result.data.allPage.nodes
