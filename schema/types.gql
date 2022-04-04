@@ -1,8 +1,4 @@
 module.exports = `
-  schema {
-    query: Query
-  }
-
   type Query{
     page: [page]
   }
